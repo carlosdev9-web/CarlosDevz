@@ -6,3 +6,4 @@ Este proyecto está diseñado para implementar un robot que pueda codificar y de
 - Codificación de señales SSTV
 - Decodificación de señales SSTV
 
+es un .Zip ay que descomprimirlo y correrlo
