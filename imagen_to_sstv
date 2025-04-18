@@ -1,0 +1,16 @@
+from PIL import Image
+from pysstv.color import Robot36
+import sys
+
+def image_to_sstv(image_path, wav_path):
+    image = Image.open(image_path)
+    image = image.resize((320, 240))
+    sstv = Robot36(image, 44100, 16)
+    with open(wav_path, 'wb') as f:
+        sstv.write_wav(f)
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Uso: python image_to_sstv.py <imagen> <salida.wav>")
+        sys.exit(1)
+    image_to_sstv(sys.argv[1], sys.argv[2])

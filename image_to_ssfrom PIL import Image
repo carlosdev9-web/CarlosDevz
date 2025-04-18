@@ -1,0 +1,14 @@
+	
+sstv.sstv import Robot36
+
+def image_to_sstv(image_path, output_path):
+    image = Image.open(image_path)
+    sstv = Robot36(image, 44100, 16)
+    with open(output_path, 'wb') as f:
+        sstv.write_wav(f)
+
+image_path = 'descarga.png'
+output_path = 'salida_robot36.wav'
+
+image_to_sstv(image_path, output_path)	
+

@@ -1,0 +1,16 @@
+	
+    sstv = SSTV(image.convert("RGB"))
+
+    # Convertir la imagen a audio SSTV
+    sstv.gen_audio()
+
+    # Guardar el archivo de audio en el directorio de salida
+    sstv.save(output_path)
+
+# Rutas de la imagen y el archivo de salida
+image_path = 'descarga.png'
+output_path = 'salida_robot36.wav'
+
+# Llamar a la función para convertir la imagen
+image_to_sstv(image_path, output_path)	
+

@@ -1,0 +1,20 @@
+from pysstv.sstv import SSTV
+from PIL import Image
+
+def image_to_sstv(image_path, output_path):
+    # Abrir la imagen
+    image = Image.open(image_path)
+
+    # Crear un objeto SSTV con parámetros necesarios
+    sstv = SSTV(image.convert("RGB"), samples_per_sec=8000, bits=16)
+
+    # Guardar el archivo de audio en formato WAV
+    sstv.write_wav(output_path)
+
+# Rutas de la imagen y el archivo de salida
+image_path = 'descarga.png'
+output_path = 'salida_robot36.wav'
+
+# Llamar a la función para convertir la imagen
+image_to_sstv(image_path, output_path)	
+

@@ -1,0 +1,16 @@
+from pysstv.color import MartinM1  # Cambia esto
+from PIL import Image
+
+def image_to_sstv(image_path, output_path):
+    image = Image.open(image_path)
+
+    # Usamos MartinM1 como ejemplo (funciona con pysstv 0.5.6)
+    sstv = MartinM1(image.convert("RGB"), 8000, 16)
+
+    sstv.write_wav(output_path)
+
+# Cambia a tu imagen si es diferente
+image_path = 'descarga.png'
+output_path = 'salida_martin.wav'
+
+image_to_sstv(image_path, output_path)
